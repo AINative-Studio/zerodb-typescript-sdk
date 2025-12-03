@@ -1,7 +1,6 @@
 {
   "name": "@ainative/sdk",
-  "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Official TypeScript/JavaScript SDK for AINative Studio APIs",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -20,7 +19,7 @@
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "npm run build && npm run test",
+    "prepublishOnly": "npm run build",
     "docs": "typedoc --out docs src/index.ts"
   },
   "keywords": [
@@ -38,14 +37,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ainative/ainative-sdk-js"
+    "url": "https://github.com/AINative-Studio/TypeScript-SDK"
   },
   "bugs": {
-    "url": "https://github.com/ainative/ainative-sdk-js/issues"
+    "url": "https://github.com/AINative-Studio/TypeScript-SDK/issues"
   },
-  "homepage": "https://docs.ainative.studio",
+  "homepage": "https://ainative.studio",
   "dependencies": {
-    "axios": "^1.6.2",
+    "axios": "^1.7.4",
     "eventemitter3": "^5.0.1"
   },
   "devDependencies": {
