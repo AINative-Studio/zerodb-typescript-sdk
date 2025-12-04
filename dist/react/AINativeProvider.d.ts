@@ -28,7 +28,7 @@ export interface AINativeProviderProps {
  * }
  * ```
  */
-export declare function AINativeProvider({ children, config, client: providedClient }: AINativeProviderProps): import("react/jsx-runtime").JSX.Element;
+export declare function AINativeProvider({ children, config, client: providedClient }: AINativeProviderProps): any;
 /**
  * Hook to access AINative context
  */

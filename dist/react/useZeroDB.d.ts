@@ -1,7 +1,6 @@
 /**
  * React hook for ZeroDB operations
  */
-import type { Project, CreateProjectRequest, Vector, UpsertVectorRequest, SearchVectorRequest, SearchVectorResponse, Memory, StoreMemoryRequest, SearchMemoryRequest } from '../types/zerodb';
 /**
  * Hook for ZeroDB operations with loading states
  *
@@ -32,36 +31,34 @@ import type { Project, CreateProjectRequest, Vector, UpsertVectorRequest, Search
  */
 export declare function useZeroDB(): {
     projects: {
-        list: (options?: any) => Promise<import("..").ApiResponse<Project[]>>;
-        create: (data: CreateProjectRequest) => Promise<import("..").ApiResponse<Project>>;
-        get: (projectId: string) => Promise<import("..").ApiResponse<Project>>;
-        update: (projectId: string, data: any) => Promise<import("..").ApiResponse<Project>>;
-        delete: (projectId: string) => Promise<import("..").ApiResponse<void>>;
+        list: any;
+        create: any;
+        get: any;
+        update: any;
+        delete: any;
     };
     vectors: {
-        upsert: (projectId: string, data: UpsertVectorRequest) => Promise<import("..").ApiResponse<Vector>>;
-        search: (projectId: string, data: SearchVectorRequest) => Promise<import("..").ApiResponse<SearchVectorResponse>>;
-        batchUpsert: (projectId: string, data: any) => Promise<import("..").ApiResponse<{
-            inserted: number;
-        }>>;
-        list: (projectId: string, namespace?: string, limit?: number) => Promise<import("..").ApiResponse<Vector[]>>;
+        upsert: any;
+        search: any;
+        batchUpsert: any;
+        list: any;
     };
     memory: {
-        store: (projectId: string, data: StoreMemoryRequest) => Promise<import("..").ApiResponse<Memory>>;
-        search: (projectId: string, data: SearchMemoryRequest) => Promise<import("..").ApiResponse<Memory[]>>;
-        list: (projectId: string, options?: any) => Promise<import("..").ApiResponse<Memory[]>>;
+        store: any;
+        search: any;
+        list: any;
     };
     events: {
-        publish: (projectId: string, data: any) => Promise<import("..").ApiResponse<import("../types/zerodb").Event>>;
-        list: (projectId: string, topic?: string, limit?: number) => Promise<import("..").ApiResponse<import("../types/zerodb").Event[]>>;
-        stream: (projectId: string, options: any) => EventSource;
+        publish: any;
+        list: any;
+        stream: any;
     };
     analytics: {
-        usage: (projectId: string, days?: number) => Promise<import("..").ApiResponse<import("../types/zerodb").UsageMetrics[]>>;
-        costs: (projectId: string, days?: number) => Promise<import("..").ApiResponse<import("../types/zerodb").CostAnalysis>>;
-        overview: (projectId: string) => Promise<import("..").ApiResponse<import("../types/zerodb").Analytics>>;
+        usage: any;
+        costs: any;
+        overview: any;
     };
-    loading: boolean;
-    error: Error | null;
+    loading: any;
+    error: any;
 };
 //# sourceMappingURL=useZeroDB.d.ts.map

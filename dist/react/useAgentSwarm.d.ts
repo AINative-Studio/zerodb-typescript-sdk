@@ -1,7 +1,6 @@
 /**
  * React hook for Agent Swarm operations
  */
-import type { Swarm, StartSwarmRequest, OrchestrateTaskRequest, Task, AgentType, ConfigureAgentPromptRequest } from '../types/agent-swarm';
 /**
  * Hook for Agent Swarm operations with loading states
  *
@@ -34,46 +33,37 @@ import type { Swarm, StartSwarmRequest, OrchestrateTaskRequest, Task, AgentType,
  */
 export declare function useAgentSwarm(): {
     swarm: {
-        start: (data: StartSwarmRequest) => Promise<import("..").ApiResponse<Swarm>>;
-        status: (swarmId: string) => Promise<import("..").ApiResponse<Swarm>>;
-        stop: (swarmId: string) => Promise<import("..").ApiResponse<{
-            message: string;
-        }>>;
-        pause: (swarmId: string) => Promise<import("..").ApiResponse<Swarm>>;
-        resume: (swarmId: string) => Promise<import("..").ApiResponse<Swarm>>;
-        list: (projectId?: string) => Promise<import("..").ApiResponse<Swarm[]>>;
+        start: any;
+        status: any;
+        stop: any;
+        pause: any;
+        resume: any;
+        list: any;
     };
     tasks: {
-        orchestrate: (data: OrchestrateTaskRequest) => Promise<import("..").ApiResponse<Task>>;
-        status: (taskId: string) => Promise<import("..").ApiResponse<Task>>;
-        cancel: (taskId: string) => Promise<import("..").ApiResponse<{
-            message: string;
-        }>>;
-        list: (swarmId: string) => Promise<import("..").ApiResponse<Task[]>>;
+        orchestrate: any;
+        status: any;
+        cancel: any;
+        list: any;
     };
     agents: {
-        types: () => Promise<import("..").ApiResponse<AgentType[]>>;
-        get: (agentId: string) => Promise<import("..").ApiResponse<import("../types/agent-swarm").Agent>>;
-        add: (swarmId: string, agent: {
-            type: AgentType;
-            config?: any;
-        }) => Promise<import("..").ApiResponse<import("../types/agent-swarm").Agent>>;
-        remove: (swarmId: string, agentId: string) => Promise<import("..").ApiResponse<{
-            message: string;
-        }>>;
-        configurePrompt: (data: ConfigureAgentPromptRequest) => Promise<import("..").ApiResponse<import("../types/agent-swarm").AgentPrompt>>;
-        getPrompt: (agentType: AgentType) => Promise<import("..").ApiResponse<import("../types/agent-swarm").AgentPrompt>>;
+        types: any;
+        get: any;
+        add: any;
+        remove: any;
+        configurePrompt: any;
+        getPrompt: any;
     };
     metrics: {
-        swarm: (swarmId: string) => Promise<import("..").ApiResponse<import("../types/agent-swarm").SwarmMetrics>>;
-        agent: (agentId: string) => Promise<import("..").ApiResponse<any>>;
-        project: (projectId: string) => Promise<import("..").ApiResponse<any>>;
+        swarm: any;
+        agent: any;
+        project: any;
     };
     events: {
-        stream: (swarmId: string, onEvent: (event: any) => void) => EventSource;
-        history: (swarmId: string, limit?: number) => Promise<import("..").ApiResponse<import("../types/agent-swarm").SwarmEvent[]>>;
+        stream: any;
+        history: any;
     };
-    loading: boolean;
-    error: Error | null;
+    loading: any;
+    error: any;
 };
 //# sourceMappingURL=useAgentSwarm.d.ts.map
