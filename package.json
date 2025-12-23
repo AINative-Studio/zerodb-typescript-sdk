@@ -1,6 +1,6 @@
 {
   "name": "@zerodb/mcp-client",
-  "version": "1.0.0",
+  "version": "2.3.0",
   "description": "Production-ready TypeScript/JavaScript client for ZeroDB MCP Bridge",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
