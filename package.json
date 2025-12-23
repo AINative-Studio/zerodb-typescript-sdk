@@ -1,0 +1,59 @@
+{
+  "name": "@zerodb/mcp-client",
+  "version": "1.0.0",
+  "description": "Production-ready TypeScript/JavaScript client for ZeroDB MCP Bridge",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "zerodb",
+    "mcp",
+    "vector",
+    "database",
+    "quantum",
+    "semantic-search",
+    "embeddings",
+    "ai",
+    "machine-learning"
+  ],
+  "author": "AINative Studio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ainative-studio/zerodb-mcp-client"
+  },
+  "bugs": {
+    "url": "https://github.com/ainative-studio/zerodb-mcp-client/issues"
+  },
+  "homepage": "https://github.com/ainative-studio/zerodb-mcp-client#readme",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.48.0",
+    "jest": "^29.6.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
