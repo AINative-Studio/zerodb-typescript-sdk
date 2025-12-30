@@ -1,6 +1,6 @@
 {
   "name": "@ainative/sdk",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Official TypeScript/JavaScript SDK for AINative Studio APIs",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

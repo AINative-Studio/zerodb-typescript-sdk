@@ -24,43 +24,43 @@ class ZeroDBClient {
                     params.append('limit', options.limit.toString());
                 if (options?.offset)
                     params.append('offset', options.offset.toString());
-                return this.client.get(`/public/projects?${params}`);
+                return this.client.get(`/projects?${params}`);
             },
             /**
              * Create a new project
              */
             create: async (data) => {
-                return this.client.post('/public/projects', data);
+                return this.client.post('/projects', data);
             },
             /**
              * Get project details
              */
             get: async (projectId) => {
-                return this.client.get(`/public/projects/${projectId}`);
+                return this.client.get(`/projects/${projectId}`);
             },
             /**
              * Update project
              */
             update: async (projectId, data) => {
-                return this.client.put(`/public/projects/${projectId}`, data);
+                return this.client.put(`/projects/${projectId}`, data);
             },
             /**
              * Delete project
              */
             delete: async (projectId) => {
-                return this.client.delete(`/public/projects/${projectId}`);
+                return this.client.delete(`/projects/${projectId}`);
             },
             /**
              * Suspend project
              */
             suspend: async (projectId) => {
-                return this.client.post(`/public/projects/${projectId}/suspend`);
+                return this.client.post(`/projects/${projectId}/suspend`);
             },
             /**
              * Activate project
              */
             activate: async (projectId) => {
-                return this.client.post(`/public/projects/${projectId}/activate`);
+                return this.client.post(`/projects/${projectId}/activate`);
             }
         };
         /**
@@ -71,19 +71,19 @@ class ZeroDBClient {
              * Get database status
              */
             status: async (projectId) => {
-                return this.client.get(`/public/projects/${projectId}/database`);
+                return this.client.get(`/projects/${projectId}/database`);
             },
             /**
              * Enable database for project
              */
             enable: async (projectId) => {
-                return this.client.post(`/public/projects/${projectId}/database`);
+                return this.client.post(`/projects/${projectId}/database`);
             },
             /**
              * Update database configuration
              */
             updateConfig: async (projectId, config) => {
-                return this.client.put(`/public/projects/${projectId}/database`, config);
+                return this.client.put(`/projects/${projectId}/database`, config);
             }
         };
         /**
@@ -94,19 +94,19 @@ class ZeroDBClient {
              * Upsert a vector
              */
             upsert: async (projectId, data) => {
-                return this.client.post(`/public/projects/${projectId}/database/vectors/upsert`, data);
+                return this.client.post(`/projects/${projectId}/database/vectors/upsert`, data);
             },
             /**
              * Search vectors
              */
             search: async (projectId, data) => {
-                return this.client.post(`/public/projects/${projectId}/database/vectors/search`, data);
+                return this.client.post(`/projects/${projectId}/database/vectors/search`, data);
             },
             /**
              * Batch upsert vectors
              */
             batchUpsert: async (projectId, data) => {
-                return this.client.post(`/public/projects/${projectId}/database/vectors/upsert-batch`, data.vectors);
+                return this.client.post(`/projects/${projectId}/database/vectors/upsert-batch`, data.vectors);
             },
             /**
              * List vectors
@@ -117,7 +117,7 @@ class ZeroDBClient {
                     params.append('namespace', namespace);
                 if (limit)
                     params.append('limit', limit.toString());
-                return this.client.get(`/public/projects/${projectId}/database/vectors?${params}`);
+                return this.client.get(`/projects/${projectId}/database/vectors?${params}`);
             }
         };
         /**
@@ -128,13 +128,13 @@ class ZeroDBClient {
              * Store memory
              */
             store: async (projectId, data) => {
-                return this.client.post(`/public/projects/${projectId}/database/memory/store`, data);
+                return this.client.post(`/projects/${projectId}/database/memory/store`, data);
             },
             /**
              * Search memories
              */
             search: async (projectId, data) => {
-                return this.client.post(`/public/projects/${projectId}/database/memory/search`, data);
+                return this.client.post(`/projects/${projectId}/database/memory/search`, data);
             },
             /**
              * List memories
@@ -145,7 +145,7 @@ class ZeroDBClient {
                     params.append('limit', options.limit.toString());
                 if (options?.offset)
                     params.append('offset', options.offset.toString());
-                return this.client.get(`/public/projects/${projectId}/database/memory?${params}`);
+                return this.client.get(`/projects/${projectId}/database/memory?${params}`);
             }
         };
         /**
@@ -156,7 +156,7 @@ class ZeroDBClient {
              * Publish an event
              */
             publish: async (projectId, data) => {
-                return this.client.post(`/public/projects/${projectId}/database/events/publish`, data);
+                return this.client.post(`/projects/${projectId}/database/events/publish`, data);
             },
             /**
              * List events
@@ -167,7 +167,7 @@ class ZeroDBClient {
                     params.append('topic', topic);
                 if (limit)
                     params.append('limit', limit.toString());
-                return this.client.get(`/public/projects/${projectId}/database/events?${params}`);
+                return this.client.get(`/projects/${projectId}/database/events?${params}`);
             },
             /**
              * Stream events (Server-Sent Events)
@@ -178,7 +178,7 @@ class ZeroDBClient {
                     params.append('topic', options.topic);
                 if (options.fromTimestamp)
                     params.append('from_timestamp', options.fromTimestamp);
-                const url = `${this.client['config'].baseUrl}/public/projects/${projectId}/database/events/stream?${params}`;
+                const url = `${this.client['config'].baseUrl}/projects/${projectId}/database/events/stream?${params}`;
                 const eventSource = new EventSource(url);
                 eventSource.onmessage = (event) => {
                     if (options.onMessage) {
@@ -212,7 +212,7 @@ class ZeroDBClient {
              * Upload file metadata
              */
             upload: async (projectId, data) => {
-                return this.client.post(`/public/projects/${projectId}/database/files/upload`, data);
+                return this.client.post(`/projects/${projectId}/database/files/upload`, data);
             },
             /**
              * List files
@@ -223,7 +223,7 @@ class ZeroDBClient {
                     params.append('limit', options.limit.toString());
                 if (options?.offset)
                     params.append('offset', options.offset.toString());
-                return this.client.get(`/public/projects/${projectId}/database/files?${params}`);
+                return this.client.get(`/projects/${projectId}/database/files?${params}`);
             }
         };
         /**
@@ -237,7 +237,7 @@ class ZeroDBClient {
                 const params = new URLSearchParams();
                 if (days)
                     params.append('days', days.toString());
-                return this.client.get(`/public/projects/${projectId}/analytics/usage?${params}`);
+                return this.client.get(`/projects/${projectId}/analytics/usage?${params}`);
             },
             /**
              * Get cost analysis
@@ -246,13 +246,13 @@ class ZeroDBClient {
                 const params = new URLSearchParams();
                 if (days)
                     params.append('days', days.toString());
-                return this.client.get(`/public/projects/${projectId}/analytics/costs?${params}`);
+                return this.client.get(`/projects/${projectId}/analytics/costs?${params}`);
             },
             /**
              * Get analytics overview
              */
             overview: async (projectId) => {
-                return this.client.get(`/public/projects/${projectId}/analytics`);
+                return this.client.get(`/projects/${projectId}/analytics`);
             }
         };
     }
